@@ -1,0 +1,55 @@
+{% assign is_project = false %}
+{% if page.layout == "project" %}{% assign is_project = true %}{% endif %}
+
+{% if is_project %}
+	{% if page.abstract.first %}{% assign meta_text = page.abstract | join: " " %}{% else %}{% assign meta_text = page.abstract %}{% endif %}
+	{% assign meta_description = meta_text | strip_html | normalize_whitespace | truncate: 200 %}
+
+	{% if page.teaser.first %}{% assign meta_image = page.teaser.first %}{% else %}{% assign meta_image = page.teaser %}{% endif %}
+	{% assign meta_image_ext = meta_image | split: "." | last | downcase %}
+	{% if meta_image_ext == "mp4" %}{% assign meta_image = page.thumbnail %}{% endif %}
+	{% include small_image.html dir=page.dir file=meta_image %}
+	{% assign meta_image = page.dir | append: small_image %}
+
+	{% assign project_name = page.dir | remove_first: "/projects/" | remove: "/" %}
+	{% assign meta_year = nil %}
+	{% for group in site.data.publications.years %}
+		{% if group.projects contains project_name %}{% assign meta_year = group.year %}{% endif %}
+	{% endfor %}
+	{% unless meta_year %}
+		{% assign venue_words = page.venue | split: " " %}
+		{% for word in venue_words %}
+			{% assign venue_year = word | remove: "(" | remove: ")" | remove: "," %}
+			{% if venue_year.size == 4 and venue_year > "1900" and venue_year < "2100" %}{% assign meta_year = venue_year %}{% endif %}
+		{% endfor %}
+	{% endunless %}
+{% else %}
+	{% assign meta_description = page.description | default: site.description %}
+	{% assign meta_image = "/images/cmc.jpg" %}
+{% endif %}
+
+<meta name="description" content="{{ meta_description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ site.name | escape }}">
+<meta property="og:type" content="{% if is_project %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ meta_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ meta_image | absolute_url }}">
+<meta name="twitter:card" content="{% if is_project %}summary_large_image{% else %}summary{% endif %}">
+
+{% if is_project %}
+<meta name="citation_title" content="{{ page.title | escape }}">
+{% for author in page.authors %}
+<meta name="citation_author" content="{{ author | split: ' (' | first | remove: '*' | remove: '†' | strip | escape }}">
+{% endfor %}
+{% if meta_year %}<meta name="citation_publication_date" content="{{ meta_year }}">{% endif %}
+{% if page.paper_label == "Thesis" %}
+<meta name="citation_dissertation_institution" content="{{ page.venue | remove: meta_year | strip | escape }}">
+{% else %}
+	{% assign venue_tag = "citation_conference_title" %}
+	{% if page.venue contains "Transactions" or page.venue contains "Journal" %}{% assign venue_tag = "citation_journal_title" %}{% endif %}
+	{% unless page.venue contains "arXiv" %}<meta name="{{ venue_tag }}" content="{{ page.venue | escape }}">{% endunless %}
+{% endif %}
+{% if page.paper %}<meta name="citation_pdf_url" content="{{ page.dir | append: page.paper | absolute_url }}">{% endif %}
+{% endif %}

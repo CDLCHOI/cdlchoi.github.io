@@ -1,0 +1,32 @@
+---
+layout: default
+title: Deli Cai
+---
+
+<section class="intro">
+	<img class="intro-photo" src="images/cmc.jpg" alt="Deli Cai">
+	<div class="intro-text">
+		<h1>Deli Cai</h1>
+		<ul class="profile-links">
+			<li><a href="mailto:eecaideli@mail.scut.edu.cn">Email</a></li>
+			<li><a href="/docs/Deli_Cai_CV.pdf">CV</a></li>
+			<li><a href="https://github.com/CDLCHOI">GitHub</a></li>
+		</ul>
+		<p>
+			I'm a Ph.D. candidate in Information and Communication Engineering at the South China University of Technology (SCUT), advised by Professor Changxing Ding. Since January 2026, I have been a visiting student at The University of Hong Kong (HKU), advised by Professor Taku Komura and working with Zhiyang (Frank) Dou.
+		</p>
+		<p>
+			I received an M.S. in Electronics and Communications Engineering from SCUT in 2021, advised by Professor Yongjian Hu, and a B.S. in Electronic and Information Engineering from SCUT in 2018. My research interests lie in human motion generation, robotics, and multimodal learning.
+		</p>
+	</div>
+</section>
+
+<section>
+	<h2>Publications</h2>
+	{% for group in site.data.publications.years %}
+	<h3 class="year">{{ group.year }}</h3>
+	{% for name in group.projects %}
+	{% include publication.html name=name %}
+	{% endfor %}
+	{% endfor %}
+</section>

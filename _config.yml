@@ -1,0 +1,10 @@
+name: Deli Cai
+url: "https://cdlchoi.github.io"
+description: "Deli Cai is a Ph.D. candidate at the South China University of Technology, working on human motion generation, robotics, and multimodal learning."
+markdown: kramdown
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md

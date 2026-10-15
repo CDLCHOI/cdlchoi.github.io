@@ -1,0 +1,111 @@
+---
+layout: default
+---
+{% if page.teaser.first %}{% assign teasers = page.teaser %}{% else %}{% assign teasers = page.teaser | split: "|" %}{% endif %}
+{% if page.abstract.first %}{% assign paragraphs = page.abstract %}{% else %}{% assign paragraphs = page.abstract | split: "|" %}{% endif %}
+{% assign teaser_width = page.teaser_width | default: "100%" %}
+
+<header class="project-header">
+	<h1 class="project-title">{{ page.title }}</h1>
+	<div class="project-venue">{{ page.venue }}</div>
+	{% if page.award %}<div class="award">{{ page.award }}</div>{% endif %}
+
+	<ul class="project-authors">
+		{% for author in page.authors %}
+		{% assign parts = author | split: " (" %}
+		<li>{{ parts[0] }}{% if parts[1] %}<sup>{{ parts[1] | remove: ")" | remove: " " }}</sup>{% endif %}</li>
+		{% endfor %}
+	</ul>
+	{% if page.affiliations %}
+	<ul class="project-affiliations">
+		{% for affiliation in page.affiliations %}
+		<li>{% if page.affiliations.size > 1 %}<sup>{{ forloop.index }}</sup>{% endif %}{{ affiliation }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% if page.author_note %}<div class="author-note">{{ page.author_note }}</div>{% endif %}
+
+	{% assign paper_label = page.paper_label | default: "Paper" %}
+	<nav class="project-links">
+		{% if page.paper %}<a class="button button-primary" href="{{ page.paper }}">{% include icon.html name=paper_label %}{{ paper_label }}</a>{% endif %}
+		{% for group in page.links %}
+		{% assign group_name = group[0] %}
+		{% for link in group[1] %}
+		{% assign label = link[0] %}
+		{% if label == "Link" %}{% assign label = group_name %}{% elsif label == "GitHub" %}{% assign label = "Code" %}{% endif %}
+		<a class="button" href="{{ link[1] }}">{% include icon.html name=group_name %}{{ label }}</a>
+		{% endfor %}
+		{% endfor %}
+	</nav>
+</header>
+
+<figure class="teaser">
+	{% for teaser in teasers %}
+	{% assign ext = teaser | split: "." | last | downcase %}
+	{% if ext == "mp4" %}
+	<video src="{{ teaser }}" style="width: {{ teaser_width }};" autoplay muted loop playsinline aria-label="{{ page.title }}"></video>
+	{% else %}
+	{% include small_image.html dir=page.dir file=teaser %}
+	<a href="{{ teaser }}"><img src="{{ small_image }}" style="width: {{ teaser_width }};" alt="{{ page.title }}"></a>
+	{% endif %}
+	{% endfor %}
+</figure>
+
+{% if page.abstract %}
+<section class="project-section">
+	<h2>Abstract</h2>
+	<div class="abstract">
+		{% for paragraph in paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+	</div>
+</section>
+{% endif %}
+
+{% if page.videos %}
+<section class="project-section">
+	<h2>Video{% if page.videos.size > 1 %}s{% endif %}</h2>
+	{% for video in page.videos %}
+	{% assign ext = video | split: "." | last | downcase %}
+	<div class="video">
+		{% if ext == "mp4" %}
+		<video controls preload="metadata"><source src="{{ video }}" type="video/mp4"></video>
+		{% else %}
+		<iframe src="{{ video }}" title="{{ page.title }}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+		{% endif %}
+	</div>
+	{% endfor %}
+</section>
+{% endif %}
+
+{% if page.bibtex %}
+<section class="project-section">
+	<h2>BibTeX</h2>
+	<div class="bibtex-box">
+		<button class="pill copy-button" type="button" onclick="copyBibtex(this)">Copy</button>
+		<pre>{{ page.bibtex }}</pre>
+	</div>
+</section>
+
+<script>
+	function copyBibtex(button) {
+		const text = button.parentNode.querySelector("pre").innerText;
+		const done = () => {
+			button.textContent = "Copied!";
+			setTimeout(() => { button.textContent = "Copy"; }, 1500);
+		};
+		const fallback = () => {
+			const area = document.createElement("textarea");
+			area.value = text;
+			document.body.appendChild(area);
+			area.select();
+			document.execCommand("copy");
+			area.remove();
+			done();
+		};
+		if (navigator.clipboard && window.isSecureContext) {
+			navigator.clipboard.writeText(text).then(done, fallback);
+		} else {
+			fallback();
+		}
+	}
+</script>
+{% endif %}
