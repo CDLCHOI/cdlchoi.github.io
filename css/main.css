@@ -294,6 +294,8 @@ h2 + h3.year::after {
 }
 .pub-venue {
 	font-style: italic;
+	color: var(--text);
+	font-weight: 700;
 }
 .pub-links {
 	display: flex;
