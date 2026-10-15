@@ -23,10 +23,75 @@ title: Deli Cai
 
 <section>
 	<h2>Publications</h2>
-	{% for group in site.data.publications.years %}
-	<h3 class="year">{{ group.year }}</h3>
-	{% for name in group.projects %}
-	{% include publication.html name=name %}
-	{% endfor %}
-	{% endfor %}
+
+	<!-- 一篇论文就是下面这样一个 <article> 区块，想加论文就整段复制一份再改文字。
+	     改标题：<a class="pub-title"> 里的文字，以及上面 img 的 alt="..."要吃保持一致。
+	     加粗自己的名字：用 <b></b> 包起来。
+	     图片：换掉 projects/<论文名>/cmc.jpg 这个文件即可，文件名不用改。 -->
+
+	<h3 class="year">2027</h3>
+
+	<article class="pub">
+		<a class="pub-thumb" href="projects/Audio_Motion/index.html"><img src="projects/Audio_Motion/cmc.jpg" alt="Human Motion Generation Conditioned on Dynamic Spatial Audio" loading="lazy"></a>
+		<div class="pub-info">
+			<a class="pub-title" href="projects/Audio_Motion/index.html">Human Motion Generation Conditioned on Dynamic Spatial Audio</a>
+			<!-- 作者列表还没确定，先留空 -->
+			<div class="pub-authors"></div>
+			<div class="pub-venue">To be submitted to ICLR 2027</div>
+			<div class="pub-links">
+				<a class="pill" href="projects/Audio_Motion/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+			</div>
+		</div>
+	</article>
+
+	<article class="pub">
+		<a class="pub-thumb" href="projects/Scene_Aware_Audio/index.html"><img src="projects/Scene_Aware_Audio/cmc.jpg" alt="Scene-Aware Motion Generation with Spatial Audio Integration" loading="lazy"></a>
+		<div class="pub-info">
+			<a class="pub-title" href="projects/Scene_Aware_Audio/index.html">Scene-Aware Motion Generation with Spatial Audio Integration</a>
+			<!-- 作者列表还没确定，先留空 -->
+			<div class="pub-authors"></div>
+			<div class="pub-venue">To be submitted to CVPR 2027</div>
+			<div class="pub-links">
+				<a class="pill" href="projects/Scene_Aware_Audio/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+			</div>
+		</div>
+	</article>
+
+	<h3 class="year">2026</h3>
+
+	<article class="pub">
+		<a class="pub-thumb" href="projects/Trajectory_HMG/index.html"><img src="projects/Trajectory_HMG/cmc.jpg" alt="Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation" loading="lazy"></a>
+		<div class="pub-info">
+			<a class="pub-title" href="projects/Trajectory_HMG/index.html">Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation</a>
+			<div class="pub-authors"><b>Deli Cai</b>, Haoyang Ma, Changxing Ding</div>
+			<div class="pub-venue">IEEE Transactions on Multimedia (TMM) 2026</div>
+			<div class="pub-links">
+				<a class="pill" href="projects/Trajectory_HMG/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+			</div>
+		</div>
+	</article>
+
+	<article class="pub">
+		<a class="pub-thumb" href="projects/StereoGS/index.html"><img src="projects/StereoGS/cmc.jpg" alt="StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior" loading="lazy"></a>
+		<div class="pub-info">
+			<a class="pub-title" href="projects/StereoGS/index.html">StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior</a>
+			<div class="pub-authors">Wenhao Yuan, Yiyuan Ge, <b>Deli Cai</b></div>
+			<div class="pub-venue">European Conference on Computer Vision (ECCV) 2026</div>
+			<div class="pub-links">
+				<a class="pill" href="projects/StereoGS/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+			</div>
+		</div>
+	</article>
+
+	<article class="pub">
+		<a class="pub-thumb" href="projects/Generation_Oriented_Text/index.html"><img src="projects/Generation_Oriented_Text/cmc.jpg" alt="Learning Generation-Oriented Text Representations for Human Motion Generation" loading="lazy"></a>
+		<div class="pub-info">
+			<a class="pub-title" href="projects/Generation_Oriented_Text/index.html">Learning Generation-Oriented Text Representations for Human Motion Generation</a>
+			<div class="pub-authors"><b>Deli Cai</b>, Changxing Ding, Shaoli Huang, Xiangmin Xu</div>
+			<div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS) 2026, under review</div>
+			<div class="pub-links">
+				<a class="pill" href="projects/Generation_Oriented_Text/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+			</div>
+		</div>
+	</article>
 </section>

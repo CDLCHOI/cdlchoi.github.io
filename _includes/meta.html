@@ -11,18 +11,12 @@
 	{% include small_image.html dir=page.dir file=meta_image %}
 	{% assign meta_image = page.dir | append: small_image %}
 
-	{% assign project_name = page.dir | remove_first: "/projects/" | remove: "/" %}
 	{% assign meta_year = nil %}
-	{% for group in site.data.publications.years %}
-		{% if group.projects contains project_name %}{% assign meta_year = group.year %}{% endif %}
+	{% assign venue_words = page.venue | split: " " %}
+	{% for word in venue_words %}
+		{% assign venue_year = word | remove: "(" | remove: ")" | remove: "," %}
+		{% if venue_year.size == 4 and venue_year > "1900" and venue_year < "2100" %}{% assign meta_year = venue_year %}{% endif %}
 	{% endfor %}
-	{% unless meta_year %}
-		{% assign venue_words = page.venue | split: " " %}
-		{% for word in venue_words %}
-			{% assign venue_year = word | remove: "(" | remove: ")" | remove: "," %}
-			{% if venue_year.size == 4 and venue_year > "1900" and venue_year < "2100" %}{% assign meta_year = venue_year %}{% endif %}
-		{% endfor %}
-	{% endunless %}
 {% else %}
 	{% assign meta_description = page.description | default: site.description %}
 	{% assign meta_image = "/images/cmc.jpg" %}
