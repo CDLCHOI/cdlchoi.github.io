@@ -25,9 +25,9 @@ title: Deli Cai
 	<h2>Publications</h2>
 
 	<!-- 一篇论文就是下面这样一个 <article> 区块，想加论文就整段复制一份再改文字。
-	     改标题：<a class="pub-title"> 里的文字，以及上面 img 的 alt="..."要吃保持一致。
-	     加粗自己的名字：用 <b></b> 包起来。
-	     图片：换掉 projects/<论文名>/cmc.jpg 这个文件即可，文件名不用改。 -->
+	     改标题：<a class="pub-title"> 里的文字，以及上面 img 的 alt="..." 要保持一致。
+	     加粗自己的名字：用 <b></b> 包起来；标注通讯作者：名字后加 <sup>*</sup>，再补一行 author-note。
+	     图片：目前都用 images/cmc.jpg 这个占位图，直接覆盖那个文件即可，文件名不用改。 -->
 
 	<h3 class="year">2027</h3>
 
@@ -60,7 +60,7 @@ title: Deli Cai
 	<h3 class="year">2026</h3>
 
 	<article class="pub">
-		<a class="pub-thumb" href="projects/CMC/index.html"><img src="projects/CMC/static/images/overview.png" alt="Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation" loading="lazy"></a>
+		<a class="pub-thumb" href="projects/CMC/index.html"><img src="images/cmc.jpg" alt="Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation" loading="lazy"></a>
 		<div class="pub-info">
 			<a class="pub-title" href="projects/CMC/index.html">Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation</a>
 			<div class="pub-authors"><b>Deli Cai</b>, Haoyang Ma, Changxing Ding</div>
@@ -68,18 +68,22 @@ title: Deli Cai
 			<div class="pub-links">
 				<a class="pill" href="projects/CMC/index.html">{% include icon.html name="project" px=13 %}Project page</a>
 				<a class="pill" href="https://arxiv.org/abs/2605.13729">{% include icon.html name="paper" px=13 %}Paper</a>
+				<a class="pill" href="https://github.com/CDLCHOI/cmc_release">{% include icon.html name="code" px=13 %}Code</a>
 			</div>
 		</div>
 	</article>
 
 	<article class="pub">
-		<a class="pub-thumb" href="projects/StereoGS/index.html"><img src="images/cmc.jpg" alt="StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior" loading="lazy"></a>
+		<a class="pub-thumb" href="https://stringerywh00.github.io/StereoGS_project_page/"><img src="images/stereogs.png" alt="StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior" loading="lazy"></a>
 		<div class="pub-info">
-			<a class="pub-title" href="projects/StereoGS/index.html">StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior</a>
-			<div class="pub-authors">Wenhao Yuan, Yiyuan Ge, <b>Deli Cai</b></div>
+			<a class="pub-title" href="https://stringerywh00.github.io/StereoGS_project_page/">StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior</a>
+			<div class="pub-authors">Wenhao Yuan, Yiyuan Ge, <b>Deli Cai</b><sup>*</sup></div>
+			<div class="author-note">* Corresponding author</div>
 			<div class="pub-venue">European Conference on Computer Vision (ECCV) 2026</div>
 			<div class="pub-links">
-				<a class="pill" href="projects/StereoGS/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill" href="https://stringerywh00.github.io/StereoGS_project_page/">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill" href="https://arxiv.org/abs/2606.30545">{% include icon.html name="paper" px=13 %}Paper</a>
+				<a class="pill" href="https://github.com/StringerYwh00/StereoGS">{% include icon.html name="code" px=13 %}Code</a>
 			</div>
 		</div>
 	</article>

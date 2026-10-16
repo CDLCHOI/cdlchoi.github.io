@@ -254,7 +254,7 @@ h2 + h3.year::after {
 
 .pub {
 	display: grid;
-	grid-template-columns: 200px 1fr;
+	grid-template-columns: 300px 1fr;
 	gap: 1.5rem;
 	align-items: center;
 	padding: 1rem 0;
