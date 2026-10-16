@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <!-- <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a> -->
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            LeGO
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="letter-spacing: -1px; width: 110%; margin-left: -5%;">
+            Coordinating Multiple Conditions for <br> Trajectory-Controlled Human Motion Generation
+          </h1>
+          
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <strong> IEEE Transactions on MultiMedia (TMM) 2026</strong>
+            </span>
+          </div>
+        
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/CDLCHOI">Deli Cai</a>,
+            </span>
+            <span class="author-block">
+              Haoyang Ma,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=8Z8jplgAAAAJ&hl=en">Changxing Ding</a><sup>†</sup>,
+            </span>
+          </div>
+
+          
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">South China University of Technology</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>†</sup>Indicates Corresponding Author</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ieeexplore.ieee.org/document/11533465"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="http://arxiv.org/abs/2605.13729"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/CDLCHOI/cmc_release"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/poster.jpg" alt="Framework architecture." style="width: 100%; height: auto;">
+      <h2 class="subtitle has-text-centered">
+        <strong> CMC supports (1) Single-Joint Control, (2) Multi-Joint Control, and (3) Keyframe Control </strong> 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Trajectory-controlled human motion generation aims to synthesize realistic human motions conditioned on both textual descriptions and spatial trajectories. However, existing methods suffer from two critical limitations: first, the conflict between text and trajectory conditions disrupts the denoising process, resulting in compromised motion quality or inaccurate trajectory following; second, the use of redundant motion representations introduces inconsistencies between motion components, leading to instability during trajectory control.
+          </p>
+          <p>
+            To address these challenges, we propose CMC, a decoupled framework that effectively coordinates text and trajectory conditions through a divide-and-conquer strategy. CMC follows a divide-and-conquer paradigm, comprising two cascaded stages: Trajectory Control and Motion Completion. In the first stage, a diffusion model generates a simplified representation of the controlled joints under trajectory guidance, based on the given trajectories, ensuring accurate and stable trajectory following. In the second stage, a text-conditioned diffusion inpainting model generates full-body motions using the simplified representation from the first stage as partial observations. To mitigate overfitting caused by limited inpainting training data, we further introduce the Selective Inpainting Mechanism (SIM), which alternates between text-to-motion generation and motion inpainting tasks during training.
+          </p>
+          <p>
+            Experiments on HumanML3D and KIT datasets demonstrate that CMC achieves state-of-the-art performance in control accuracy and motion quality, demonstrating its effectiveness in coordinating multimodal conditions and representations. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+    <!-- Paper Pipeline/Framework Layout. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework Overview</h2>
+        <div class="publication-image">
+          <img src="./static/images/overview.png"
+               alt="Framework architecture."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong> Overview of CMC framework. </strong> It consists of two stages: <strong> Trajectory Control </strong> and <strong>  Motion Completion  </strong>. In the Trajectory Control stage, we utilize textual descriptions and spatial trajectories of the controlled joints to predict the trajectories of both the pelvis and the controlled joints within a simplified representation space. Subsequently, the Motion Completion stage takes these trajectories as partial observations and completes the full-body motion using a diffusion inpainting model. Both stages use CLIP as the text encoder.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+</section>
+
+
+<div class="columns is-centered">
+  <div class="column is-full has-text-centered">
+    <h2 class="title is-3">Comparison with SOTA</h2>
+  </div>
+</div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Comparison-A person runs along a triangle.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Comparison-A man keeps jumping while walking forward.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Comparison-A man walks forward then walks backward while facing forward.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Comparison-A man is hopping on his left leg.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Comparison-A man walks forward then stretches his arms.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+<div class="columns is-centered">
+  <div class="column is-full has-text-centered">
+    <h2 class="title is-3">Ablations</h2>
+  </div>
+</div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Ablation-A man walks a few steps then sits on a chair.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="column content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Ablation-A person walks along a curve while holding left high.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<div class="columns is-centered">
+  <div class="column is-full has-text-centered">
+    <h2 class="title is-3">Text and Trajectory</h2>
+  </div>
+</div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A man walks along a complete circle.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/A person keeps spinning like a dancer.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A person leaps forward swiftly.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/A man walks in a circle.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A person runs along a complete circle while waving his hands.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/A person walked a few steps then started doing a forward flip.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-half">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A person walks forward as his right hand traces a path.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+
+<div class="columns is-centered">
+  <div class="column is-full has-text-centered">
+    <h2 class="title is-3">Text / Trajectory Only</h2>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Trajectory-Only-1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Trajectory-Only-2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Trajectory-Only-3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Text-Only-A person walks over an object and tries to maintain balance.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Text-Only-A man is throwing punches.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Text-Only-A person acts like a zombie, and walks aimlessly.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Text-Only-A person performs swift scissor jumps in place.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Text-Only-A person walks forward, clutching his stomach as if in pain.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{deli2026cmc,
+  author    = {Deli Cai, Haoyang Ma, Changxing Ding},
+  title     = {Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation},
+  journal   = {IEEE Transactions on Multimedia},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
