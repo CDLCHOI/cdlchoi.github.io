@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MOMO: Human Motion from Moving Sounds">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOMO: Human Motion from Moving Sounds</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <!-- 四个学校 logo，居中，顺序固定为 SCUT / HKU / MIT / UPenn。
+               想换图就覆盖 static/images/ 下对应的 logo-*.png 即可，文件名不用改。 -->
+          <div class="institution-logos">
+            <img src="./static/images/logo-scut.png" alt="South China University of Technology">
+            <img src="./static/images/logo-hku.png" alt="The University of Hong Kong">
+            <img src="./static/images/logo-mit.png" alt="MIT">
+            <img src="./static/images/logo-upenn.png" alt="University of Pennsylvania">
+          </div>
+
+          <h1 class="title is-1 publication-title">
+            MOMO: Human Motion from Moving Sounds
+          </h1>
+
+          <!-- TODO: 换成这篇论文真实的发表信息 -->
+          <div class="publication-venue">Preprint 2026</div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://cdlchoi.github.io/">Deli Cai</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://xsy27.github.io/">Shuyang Xu</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://frank-zy-dou.github.io/">Zhiyang Dou</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://zitonglan.github.io/">Zitong Lan</a><sup>4</sup>,</span>
+            <span class="author-block"><strong><a href="https://www.cis.upenn.edu/~mingminz/">Mingmin Zhao</a><sup>4</sup></strong>,</span>
+            <span class="author-block"><strong><a href="https://scholar.google.com/citations?user=8Z8jplgAAAAJ&amp;hl=en&amp;oi=ao">Changxing Ding</a><sup>1&dagger;</sup></strong>,</span>
+            <span class="author-block"><strong><a href="https://www.ai.hku.hk/people/academic-staff/taku">Taku Komura</a><sup>2&dagger;</sup></strong></span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>South China University of Technology</span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong</span>
+            <span class="author-block"><sup>3</sup>MIT</span>
+            <span class="author-block"><sup>4</sup>University of Pennsylvania</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>&dagger;</sup>Corresponding Author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- TODO: 把 href="#" 换成真实的 arXiv 链接
+                   （你本地有 MOMO_arxiv.pdf，想直接指向它的话改成 href="./MOMO_arxiv.pdf" 即可） -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- TODO: 把 href="#" 换成真实的代码仓库链接 -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Abstract -->
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Human responses to sound depend not only on its semantic content, but also on the
+            evolving spatial relationship between source and listener, conveyed through spatial
+            audio and its temporal dynamics. Modeling human reactions to such dynamic spatial
+            audio is important for character animation, human behavior analysis, and robotics.
+            As of yet, existing audio-driven motion generation methods primarily focus on
+            non-spatial or static acoustic conditions, leaving this important problem largely
+            underexplored. To bridge this gap, we formulate the novel task of dynamic
+            spatial-audio-driven human motion generation and introduce two motion-captured
+            datasets. We introduce the Dynamic Spatial Audio and Motion dataset (DySAM) as the
+            first dataset and benchmark for this task, providing synchronized binaural audio,
+            3D human motions, and moving sound source trajectories. Given the importance of
+            dynamic spatial cues of sound sources, we further provide the Dynamic Spatial Audio
+            Localization dataset (DySAL), an auxiliary binaural localization dataset that pairs
+            diverse acoustic events with head poses and moving source trajectories to support
+            spatial audio perception. For benchmarking, we propose MOMO for human Motion
+            generation from Moving Sounds, a diffusion-based framework guided by three coupled
+            principles: localization, understanding, and generation. MOMO performs localization
+            by estimating head-centric spatial direction cues of the moving source directly from
+            raw binaural audio, avoiding reliance on ground-truth source coordinates. It
+            performs understanding by extracting frame-wise audio-content representations, and
+            performs generation by conditioning motion diffusion on both semantic features and
+            dynamic spatial cues. Moreover, MOMO incorporates frame-wise motion correction
+            during denoising, enabling temporally adaptive motion synthesis under evolving
+            audio-spatial cues. Experiments show that MOMO outperforms existing baselines in
+            motion fidelity, audio-motion alignment, and physical plausibility, demonstrating
+            the potential of dynamic spatial audio for embodied motion generation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teaser 图，放在摘要下方 -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="./static/images/teaser.png"
+             alt="Teaser."
+             style="width: 100%; height: auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Framework -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="publication-image">
+          <img src="./static/images/framework.png"
+               alt="Framework architecture."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Overview of MOMO framework.</strong> MOMO comprises three coupled functional
+            components: a sound source localization (SSL) network predicts a frame-wise
+            head-centric DoA sequence <strong>D&#770;</strong> from binaural audio
+            (localization); a CLAP audio encoder extracts frame-wise audio content features
+            <strong>A</strong> from mono audio (understanding); and a conditional diffusion
+            model that iteratively denoise the Gaussian noise to generated motion, integrating
+            Frame-wise Motion Correction to adaptively correct each motion according to
+            frame-wise conditions (generation).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Benchmarking -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmarking</h2>
+        <div class="publication-image">
+          <!-- TODO: static/images/ 下还没有 main_table.png，把图放进去即可显示 -->
+          <img src="./static/images/main_table.png"
+               alt="Quantitative comparison on the DySAM dataset."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Quantitative comparisons on the DySAM dataset.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 两个并排视频。TODO: 把视频放进 static/videos/ 并覆盖下面两个文件名，
+         想换成别的名字就把 src 一起改掉。 -->
+    <div class="columns is-centered">
+      <div class="column">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/benchmark-1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/benchmark-2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
