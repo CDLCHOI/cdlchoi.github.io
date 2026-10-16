@@ -154,6 +154,39 @@ pre {
 	line-height: 1.4;
 	padding: 0.2rem 0.75rem;
 }
+
+/* Colored publication buttons: Project = green, Paper = red, Code = blue */
+
+.pill-project {
+	background: #e6f4ea;
+	border-color: #b7dfc4;
+	color: #1e6b3a;
+}
+.pill-project:hover {
+	background: #d3ecdb;
+	border-color: #1e6b3a;
+	color: #14522b;
+}
+.pill-paper {
+	background: #fdecea;
+	border-color: #f5c2bd;
+	color: #a4262c;
+}
+.pill-paper:hover {
+	background: #fbdad6;
+	border-color: #a4262c;
+	color: #7f1d22;
+}
+.pill-code {
+	background: #e7f0fd;
+	border-color: #b9d4f5;
+	color: #1a4d8f;
+}
+.pill-code:hover {
+	background: #d6e6fb;
+	border-color: #1a4d8f;
+	color: #143d73;
+}
 .button {
 	display: inline-flex;
 	align-items: center;
@@ -257,7 +290,13 @@ h2 + h3.year::after {
 	grid-template-columns: 300px 1fr;
 	gap: 1.5rem;
 	align-items: center;
-	padding: 1rem 0;
+	padding: 1.25rem 1.5rem;
+	background: #fffbe6;
+	border: 1px solid #f0e7bd;
+	border-radius: 8px;
+}
+.pub + .pub {
+	margin-top: 1rem;
 }
 .pub-thumb img, .pub-thumb video {
 	display: block;
@@ -277,12 +316,11 @@ h2 + h3.year::after {
 }
 .pub-title {
 	font-weight: 600;
-	color: var(--text);
+	color: var(--accent);
 	line-height: 1.35;
 }
 .pub-title:hover {
-	color: var(--accent);
-	text-decoration: none;
+	text-decoration: underline;
 }
 .pub-authors, .pub-venue {
 	font-size: 0.92rem;
@@ -562,5 +600,31 @@ h2 + h3.year::after {
 	}
 	.people {
 		grid-template-columns: 1fr;
+	}
+}
+
+/* Dark mode for the publication cards and colored buttons.
+   This block must stay at the very end of the file: these rules have the same
+   specificity as the light-mode ones above, so source order is what makes them win. */
+
+@media (prefers-color-scheme: dark) {
+	.pub {
+		background: #262210;
+		border-color: #4a4322;
+	}
+	.pill-project {
+		background: #12301f;
+		border-color: #1e6b3a;
+		color: #7fd8a0;
+	}
+	.pill-paper {
+		background: #3a1a1a;
+		border-color: #a4262c;
+		color: #ff9a94;
+	}
+	.pill-code {
+		background: #12243d;
+		border-color: #1a4d8f;
+		color: #7fb0f0;
 	}
 }

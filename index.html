@@ -24,9 +24,11 @@ title: Deli Cai
 <section>
 	<h2>Publications</h2>
 
+	<p class="author-note"><sup>*</sup> Corresponding author</p>
+
 	<!-- 一篇论文就是下面这样一个 <article> 区块，想加论文就整段复制一份再改文字。
 	     改标题：<a class="pub-title"> 里的文字，以及上面 img 的 alt="..." 要保持一致。
-	     加粗自己的名字：用 <b></b> 包起来；标注通讯作者：名字后加 <sup>*</sup>，再补一行 author-note。
+	     加粗自己的名字：用 <b></b> 包起来；通讯作者在名字后加 <sup>*</sup>（上面已有统一说明，不必每篇重复）。
 	     图片：目前都用 images/cmc.jpg 这个占位图，直接覆盖那个文件即可，文件名不用改。 -->
 
 	<h3 class="year">2027</h3>
@@ -39,7 +41,7 @@ title: Deli Cai
 			<div class="pub-authors"></div>
 			<div class="pub-venue">To be submitted to ICLR 2027</div>
 			<div class="pub-links">
-				<a class="pill" href="projects/Audio_Motion/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill pill-project" href="projects/Audio_Motion/index.html">{% include icon.html name="project" px=13 %}Project page</a>
 			</div>
 		</div>
 	</article>
@@ -52,7 +54,7 @@ title: Deli Cai
 			<div class="pub-authors"></div>
 			<div class="pub-venue">To be submitted to CVPR 2027</div>
 			<div class="pub-links">
-				<a class="pill" href="projects/Scene_Aware_Audio/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill pill-project" href="projects/Scene_Aware_Audio/index.html">{% include icon.html name="project" px=13 %}Project page</a>
 			</div>
 		</div>
 	</article>
@@ -60,15 +62,13 @@ title: Deli Cai
 	<h3 class="year">2026</h3>
 
 	<article class="pub">
-		<a class="pub-thumb" href="projects/CMC/index.html"><img src="images/cmc.jpg" alt="Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation" loading="lazy"></a>
+		<a class="pub-thumb" href="projects/Generation_Oriented_Text/index.html"><img src="images/cmc.jpg" alt="Learning Generation-Oriented Text Representations for Human Motion Generation" loading="lazy"></a>
 		<div class="pub-info">
-			<a class="pub-title" href="projects/CMC/index.html">Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation</a>
-			<div class="pub-authors"><b>Deli Cai</b>, Haoyang Ma, Changxing Ding</div>
-			<div class="pub-venue">IEEE Transactions on Multimedia (TMM) 2026</div>
+			<a class="pub-title" href="projects/Generation_Oriented_Text/index.html">Learning Generation-Oriented Text Representations for Human Motion Generation</a>
+			<div class="pub-authors"><b>Deli Cai</b>, Changxing Ding, Shaoli Huang, Xiangmin Xu</div>
+			<div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS) 2026, under review</div>
 			<div class="pub-links">
-				<a class="pill" href="projects/CMC/index.html">{% include icon.html name="project" px=13 %}Project page</a>
-				<a class="pill" href="https://arxiv.org/abs/2605.13729">{% include icon.html name="paper" px=13 %}Paper</a>
-				<a class="pill" href="https://github.com/CDLCHOI/cmc_release">{% include icon.html name="code" px=13 %}Code</a>
+				<a class="pill pill-project" href="projects/Generation_Oriented_Text/index.html">{% include icon.html name="project" px=13 %}Project page</a>
 			</div>
 		</div>
 	</article>
@@ -78,24 +78,25 @@ title: Deli Cai
 		<div class="pub-info">
 			<a class="pub-title" href="https://stringerywh00.github.io/StereoGS_project_page/">StereoGS: Sparse-View 3D Gaussian Splatting via Stereo Prior</a>
 			<div class="pub-authors">Wenhao Yuan, Yiyuan Ge, <b>Deli Cai</b><sup>*</sup></div>
-			<div class="author-note">* Corresponding author</div>
 			<div class="pub-venue">European Conference on Computer Vision (ECCV) 2026</div>
 			<div class="pub-links">
-				<a class="pill" href="https://stringerywh00.github.io/StereoGS_project_page/">{% include icon.html name="project" px=13 %}Project page</a>
-				<a class="pill" href="https://arxiv.org/abs/2606.30545">{% include icon.html name="paper" px=13 %}Paper</a>
-				<a class="pill" href="https://github.com/StringerYwh00/StereoGS">{% include icon.html name="code" px=13 %}Code</a>
+				<a class="pill pill-project" href="https://stringerywh00.github.io/StereoGS_project_page/">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill pill-paper" href="https://arxiv.org/abs/2606.30545">{% include icon.html name="paper" px=13 %}Paper</a>
+				<a class="pill pill-code" href="https://github.com/StringerYwh00/StereoGS">{% include icon.html name="code" px=13 %}Code</a>
 			</div>
 		</div>
 	</article>
 
 	<article class="pub">
-		<a class="pub-thumb" href="projects/Generation_Oriented_Text/index.html"><img src="images/cmc.jpg" alt="Learning Generation-Oriented Text Representations for Human Motion Generation" loading="lazy"></a>
+		<a class="pub-thumb" href="projects/CMC/index.html"><img src="images/cmc.jpg" alt="Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation" loading="lazy"></a>
 		<div class="pub-info">
-			<a class="pub-title" href="projects/Generation_Oriented_Text/index.html">Learning Generation-Oriented Text Representations for Human Motion Generation</a>
-			<div class="pub-authors"><b>Deli Cai</b>, Changxing Ding, Shaoli Huang, Xiangmin Xu</div>
-			<div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS) 2026, under review</div>
+			<a class="pub-title" href="projects/CMC/index.html">Coordinating Multiple Conditions for Trajectory-Controlled Human Motion Generation</a>
+			<div class="pub-authors"><b>Deli Cai</b>, Haoyang Ma, Changxing Ding</div>
+			<div class="pub-venue">IEEE Transactions on Multimedia (TMM) 2026</div>
 			<div class="pub-links">
-				<a class="pill" href="projects/Generation_Oriented_Text/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill pill-project" href="projects/CMC/index.html">{% include icon.html name="project" px=13 %}Project page</a>
+				<a class="pill pill-paper" href="https://arxiv.org/abs/2605.13729">{% include icon.html name="paper" px=13 %}Paper</a>
+				<a class="pill pill-code" href="https://github.com/CDLCHOI/cmc_release">{% include icon.html name="code" px=13 %}Code</a>
 			</div>
 		</div>
 	</article>
