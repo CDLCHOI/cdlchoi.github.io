@@ -54,20 +54,23 @@
             <span class="author-block"><a href="https://xsy27.github.io/">Shuyang Xu</a><sup>2</sup>,</span>
             <span class="author-block"><a href="https://frank-zy-dou.github.io/">Zhiyang Dou</a><sup>3</sup>,</span>
             <span class="author-block"><a href="https://zitonglan.github.io/">Zitong Lan</a><sup>4</sup>,</span>
-            <span class="author-block"><strong><a href="https://www.cis.upenn.edu/~mingminz/">Mingmin Zhao</a><sup>4</sup></strong>,</span>
-            <span class="author-block"><strong><a href="https://scholar.google.com/citations?user=8Z8jplgAAAAJ&amp;hl=en&amp;oi=ao">Changxing Ding</a><sup>1&dagger;</sup></strong>,</span>
-            <span class="author-block"><strong><a href="https://www.ai.hku.hk/people/academic-staff/taku">Taku Komura</a><sup>2&dagger;</sup></strong></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://www.cis.upenn.edu/~mingminz/">Mingmin Zhao</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=8Z8jplgAAAAJ&amp;hl=en&amp;oi=ao">Changxing Ding</a><sup>1*</sup>,</span>
+            <span class="author-block"><a href="https://www.ai.hku.hk/people/academic-staff/taku">Taku Komura</a><sup>2*</sup></span>
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>1</sup>South China University of Technology</span>
-            <span class="author-block"><sup>2</sup>The University of Hong Kong</span>
-            <span class="author-block"><sup>3</sup>MIT</span>
-            <span class="author-block"><sup>4</sup>University of Pennsylvania</span>
+            <span class="author-block"><sup>1</sup>South China University of Technology </span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong </span>
+            <span class="author-block"><sup>3</sup>MIT </span>
+            <span class="author-block"><sup>4</sup>University of Pennsylvania </span>
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>&dagger;</sup>Corresponding Author</span>
+            <span class="author-block"><sup>*</sup>Corresponding Author</span>
           </div>
 
           <div class="column has-text-centered">
@@ -105,46 +108,9 @@
 </section>
 
 
-<!-- Abstract -->
-<section class="section" style="background-color: #f5f5f5;">
+<!-- Teaser：在图标下方、Abstract 之前，默认白底 -->
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Human responses to sound depend not only on its semantic content, but also on the
-            evolving spatial relationship between source and listener, conveyed through spatial
-            audio and its temporal dynamics. Modeling human reactions to such dynamic spatial
-            audio is important for character animation, human behavior analysis, and robotics.
-            As of yet, existing audio-driven motion generation methods primarily focus on
-            non-spatial or static acoustic conditions, leaving this important problem largely
-            underexplored. To bridge this gap, we formulate the novel task of dynamic
-            spatial-audio-driven human motion generation and introduce two motion-captured
-            datasets. We introduce the Dynamic Spatial Audio and Motion dataset (DySAM) as the
-            first dataset and benchmark for this task, providing synchronized binaural audio,
-            3D human motions, and moving sound source trajectories. Given the importance of
-            dynamic spatial cues of sound sources, we further provide the Dynamic Spatial Audio
-            Localization dataset (DySAL), an auxiliary binaural localization dataset that pairs
-            diverse acoustic events with head poses and moving source trajectories to support
-            spatial audio perception. For benchmarking, we propose MOMO for human Motion
-            generation from Moving Sounds, a diffusion-based framework guided by three coupled
-            principles: localization, understanding, and generation. MOMO performs localization
-            by estimating head-centric spatial direction cues of the moving source directly from
-            raw binaural audio, avoiding reliance on ground-truth source coordinates. It
-            performs understanding by extracting frame-wise audio-content representations, and
-            performs generation by conditioning motion diffusion on both semantic features and
-            dynamic spatial cues. Moreover, MOMO incorporates frame-wise motion correction
-            during denoising, enabling temporally adaptive motion synthesis under evolving
-            audio-spatial cues. Experiments show that MOMO outperforms existing baselines in
-            motion fidelity, audio-motion alignment, and physical plausibility, demonstrating
-            the potential of dynamic spatial audio for embodied motion generation.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Teaser 图，放在摘要下方 -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <img src="./static/images/teaser.png"
@@ -152,12 +118,40 @@
              style="width: 100%; height: auto;">
       </div>
     </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            This paper proposes a novel task for synthesizing 3D human motions in response to dynamic spatial audio. To support this new task, we collect DySAM, the first dataset comprising synchronized dynamic spatial audio, corresponding sound source trajectories, and high-quality 3D human motion. In this figure, the model generates diverse and realistic human reactions to various moving acoustic events.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Human responses to sound depend not only on its semantic content, but also on the evolving  spatial relationship between source and listener, conveyed through spatial audio and its temporal dynamics. Modeling human reactions to such dynamic spatial audio is important for character animation, human behavior analysis, and robotics. As of yet, existing audio-driven motion generation methods primarily focus on non-spatial or static acoustic conditions, leaving this important problem largely underexplored. To bridge this gap, we formulate the novel task of dynamic spatial-audio-driven human motion generation and introduce two motion-captured datasets. We introduce the Dynamic Spatial Audio and Motion dataset (DySAM) as the first dataset and benchmark for this task, providing synchronized binaural audio, 3D human motions, and moving sound source trajectories. Given the importance of dynamic spatial cues of sound sources, we further provide the Dynamic Spatial Audio Localization dataset (DySAL), an auxiliary binaural localization dataset that pairs diverse acoustic events with head poses and moving source trajectories to support spatial audio perception. For benchmarking, we propose MOMO for human Motion generation from Moving Sounds, a diffusion-based framework guided by three coupled principles: localization, understanding, and generation. MOMO performs localization by estimating head-centric spatial direction cues of the moving source directly from raw binaural audio, avoiding reliance on ground-truth source coordinates. It performs understanding by extracting frame-wise audio-content representations, and performs generation by conditioning motion diffusion on both semantic features and dynamic spatial cues. Moreover, MOMO incorporates frame-wise motion correction during denoising, enabling temporally adaptive motion synthesis under evolving audio-spatial cues. Experiments show that MOMO outperforms existing baselines in motion fidelity, audio-motion alignment, and physical plausibility, demonstrating the potential of dynamic spatial audio for embodied motion generation.
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 
 <!-- Framework -->
-<section class="section">
+<section class="section" style="background-color: #f5f5f5;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -190,32 +184,113 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Benchmarking</h2>
+        <h2 class="title is-3">Quantitative and Qualitative Comparisons</h2>
         <div class="publication-image">
-          <!-- TODO: static/images/ 下还没有 main_table.png，把图放进去即可显示 -->
           <img src="./static/images/main_table.png"
                alt="Quantitative comparison on the DySAM dataset."
                style="width: 100%; height: auto;">
         </div>
+
         <div class="content has-text-justified">
           <p>
-            <strong>Quantitative comparisons on the DySAM dataset.</strong>
+            Quantitative Comparisons on the DySAM Dataset. ± indicates a 95% confidence interval. Bold face indicates the best result. → means the closer to Real Motion the better.
           </p>
         </div>
+        
+
+        <div class="publication-image">
+          <img src="./static/images/qualitative.png"
+               alt="Quantitative comparison on the DySAM dataset."
+               style="width: 100%; height: auto;">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            Qualitative comparison of state-of-the-art methods for the dynamic spatial audio-to-motion task. We visualize motion results from five cases.
+          </p>
+        </div>
+
+
+        <div style="height: 1.5rem;"></div>
+        <div class="columns is-centered">
+          <div class="column">
+            <video controls muted loop playsinline preload="metadata" height="100%">
+              <source src="./static/videos/baseline_compare_videos.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>We provide six comparison videos for these methods. Please click to play the video and turn on the sound.
+          </p>
+        </div>
+
       </div>
     </div>
 
-    <!-- 两个并排视频。TODO: 把视频放进 static/videos/ 并覆盖下面两个文件名，
-         想换成别的名字就把 src 一起改掉。 -->
+  </div>
+</section>
+
+
+<!-- Different Reaction Genres -->
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Different Reaction Genres</h2>
+      </div>
+    </div>
+
+    <!-- 一行一个视频。想加更多就整块复制，改文件名即可。 -->
     <div class="columns is-centered">
-      <div class="column">
+      <div class="column is-four-fifths">
         <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/benchmark-1.mp4" type="video/mp4">
+          <source src="./static/videos/genre_alarm.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="column">
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
         <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/benchmark-2.mp4" type="video/mp4">
+          <source src="./static/videos/genre_insect_bees.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/genre_train.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Robot  Demo (Sim and Real) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Robot  Demo (Sim and Real)</h2>
+      </div>
+    </div>
+
+    <!-- 依次两个视频 -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/robot_sim_video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video controls muted loop playsinline preload="metadata" height="100%">
+          <source src="./static/videos/robot_demonstration.mp4" type="video/mp4">
         </video>
       </div>
     </div>
