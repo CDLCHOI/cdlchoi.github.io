@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Better Conditioning, Better Motion: Generation-Oriented Text Representation Learning for Motion Generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Conditioning, Better Motion: Generation-Oriented Text Representation Learning for Motion Generation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <div class="institution-logos">
+            <img src="./static/images/logo-scut.png" alt="South China University of Technology">
+          </div>
+
+          <h1 class="title is-1 publication-title">
+            Better Conditioning, Better Motion:<br>
+            Generation-Oriented Text Representation Learning for Motion Generation
+          </h1>
+
+          <div class="publication-venue">Preprint 2026</div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://cdlchoi.github.io/">Deli Cai</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=8Z8jplgAAAAJ&amp;hl=en&amp;oi=ao">Changxing Ding</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>South China University of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- LeGO 尚未上传 arXiv，暂时链接到本页面 -->
+              <span class="link-block">
+                <a href="https://cdlchoi.github.io/projects/LeGO/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- 代码仓库尚未公开，暂时链接到本页面 -->
+              <span class="link-block">
+                <a href="https://cdlchoi.github.io/projects/LeGO/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-motion generation aims to synthesize realistic human motion sequences
+            from natural language descriptions. Existing methods typically use a text encoder
+            separately pretrained on proxy objectives. However, such encoders struggle to
+            capture subtle dynamic nuances, leading to inadequate text representations for motion
+            generation. We argue that effective text representations for motion generation
+            should be generation-oriented, i.e., optimized to better support the synthesis of
+            high-fidelity, text-aligned motion sequences. Accordingly, we propose LeGO, a
+            co-optimization framework that Learns Generation-Oriented text representations
+            for motion generation and derives LeGO-CLIP, a motion-specialized text encoder.
+            Specifically, LeGO adapts a pretrained CLIP text encoder into LeGO-CLIP by
+            jointly optimizing it with a motion diffusion model, allowing the encoder to receive
+            differentiable feedback from generation quality through two semantic consistency
+            constraints: a motion consistency constraint and a text consistency constraint.
+            Comprehensive experiments demonstrate the effectiveness of our method from three
+            perspectives: 1) Performance: It achieves state-of-the-art results on HumanML3D,
+            KIT-ML and SnapMoGen benchmarks; 2) Efficiency: It significantly accelerates
+            convergence, requiring up to 8&times; fewer training iterations; and 3) Transferability:
+            LeGO-CLIP serves as a plug-and-play replacement and consistently improves the
+            performance of diverse motion generation models. The source code will be made
+            publicly available.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Framework -->
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="publication-image">
+          <img src="./static/images/framework.png"
+               alt="Overview of the LeGO framework."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Overview of the LeGO framework.</strong> LeGO co-optimizes the LeGO-CLIP
+            text encoder with a motion diffusion model. A pair of text and motion projectors is
+            first trained to build a shared semantic space for text and motion. The adapted text
+            encoder then receives differentiable feedback from generation quality through two
+            semantic consistency constraints&mdash;a motion consistency constraint and a text
+            consistency constraint&mdash;so that the learned text representations are optimized
+            for motion synthesis rather than a standalone proxy objective.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Key Experiments -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Experiments</h2>
+      </div>
+    </div>
+
+    <!-- 1. Experiments on HumanML3D -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Experiments on HumanML3D</h3>
+        <div class="publication-image">
+          <img src="./static/images/exp_humanml3d.png"
+               alt="Quantitative comparisons on the HumanML3D dataset."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Quantitative comparisons on the HumanML3D test set. LeGO achieves state-of-the-art
+            FID and R-Precision, reducing MDM's FID from 0.489 to 0.039 and improving its
+            R-Precision from 0.749 to 0.888 under the same diffusion backbone.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Experiments on SnapMoGen -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Experiments on SnapMoGen</h3>
+        <div class="publication-image">
+          <img src="./static/images/exp_snapmogen.png"
+               alt="Quantitative comparisons on the SnapMoGen test set."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Quantitative comparisons on the SnapMoGen test set, where the text encoder used by
+            each method is indicated in parentheses. LeGO with a BERT text encoder achieves the
+            best R-Precision and CLIP Score among all compared methods.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Faster Convergence -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Faster Convergence</h3>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <div class="publication-image">
+          <img src="./static/images/faster_convergence.png"
+               alt="Faster convergence with LeGO-CLIP."
+               style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Replacing the vanilla CLIP encoder with LeGO-CLIP yields superior performance and
+            markedly faster convergence. MDM and MoMask reach comparable performance with
+            4&times; and 8&times; fewer training iterations, respectively.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Transferability -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Transferability</h3>
+        <div class="publication-image">
+          <img src="./static/images/transferability_humanml3d.png"
+               alt="Transferability of LeGO-CLIP on HumanML3D."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            LeGO-CLIP serves as a plug-and-play replacement for the vanilla CLIP encoder.
+            Without changing the architecture, training schedule, or inference setting, it
+            consistently improves MDM, MoMask, and SALAD on HumanML3D, with up to 80% relative
+            FID reduction.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Zero-shot Performance on MARDM-67 -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">Zero-shot Performance on MARDM-67 Benchmark</h3>
+        <div class="publication-image">
+          <img src="./static/images/zeroshot_mardm.png"
+               alt="Zero-shot performance on the MARDM-67 benchmark."
+               style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            LeGO is trained with the standard 263-dimensional motion representation. For
+            zero-shot evaluation on the MARDM-67 benchmark, we directly take the first 67
+            dimensions of generated motions and feed them into the MARDM evaluator without any
+            additional post-finetuning. LeGO still maintains state-of-the-art performance,
+            surpassing methods directly trained on the essential representation by a large
+            margin.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Visualizations -->
+<section class="section" id="visualizations" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Visualizations</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/A%20person%20is%20working%20on%20their%20boxing%20form.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/A%20person%20plays%20the%20guitar,%20strumming%20with%20their%20left%20hand.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/A%20person%20walks%20across%20a%20room%20in%20a%20confident%20manner.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Figure-A%20person%20is%20bending%20over%20and%20jumping%20forward,%20as%20if%20trying%20to%20dodge%20something..mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Figure-A%20person%20is%20dancing%20the%20waltz,%20going%20in%20a%20counter-clockwise%20direction%20with%20the%20left%20arm%20out.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Figure-A%20person%20is%20sitting%20on%20the%20floor%20and%20then%20gradually%20leans%20back%20while%20holding%20up%20his%20hands.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Figure-A%20person%20is%20standing,%20brings%20both%20hands%20to%20his%20face%20then%20does%20a%20kick%20first%20with%20left%20foot%20then%20right%20foot.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
