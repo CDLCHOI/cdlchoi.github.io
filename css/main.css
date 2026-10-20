@@ -333,6 +333,10 @@ h2 + h3.year::after {
 	color: var(--text);
 	font-weight: 600;
 }
+.pub-authors sup {
+	font-size: 1em;
+	line-height: 0;
+}
 .pub-venue {
 	font-style: italic;
 	color: var(--text);
@@ -392,6 +396,10 @@ h2 + h3.year::after {
 .author-note {
 	font-size: 0.85rem;
 	color: var(--faint);
+}
+.author-note sup {
+	font-size: 1em;
+	vertical-align: baseline;
 }
 .project-links {
 	display: flex;
