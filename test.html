@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Font Test</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans:wght@400;600&family=Inter:wght@400;600&family=Source+Sans+3:wght@400;600&family=Lora:wght@400;600&family=Carlito&family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text: #1f2328;
+      --muted: #6e7781;
+      --border: #e3e6ea;
+      --bg: #ffffff;
+      --bg-soft: #f6f8fa;
+      --ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 3rem 1.5rem 5rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ui);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+      font-weight: 650;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 2.5rem;
+    }
+
+    .group-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2.5rem 0 0.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      align-items: baseline;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .meta strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 0.3rem;
+      padding: 0.05rem 0.45rem;
+      border-radius: 4px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .sample .big {
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 400;
+      margin-bottom: 0.35rem;
+      color: #000;
+    }
+
+    .sample .small {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000;
+    }
+
+    /* Every sample below is set in the typeface it names. */
+    .google-sans   { font-family: 'Google Sans', sans-serif; }
+    .noto-sans     { font-family: 'Noto Sans', sans-serif; }
+    .inter         { font-family: 'Inter', sans-serif; }
+    .source-sans   { font-family: 'Source Sans 3', sans-serif; }
+    .roboto        { font-family: 'Roboto', sans-serif; }
+    .open-sans     { font-family: 'Open Sans', sans-serif; }
+    .lato          { font-family: 'Lato', sans-serif; }
+    .carlito       { font-family: 'Carlito', sans-serif; }
+    .lora          { font-family: 'Lora', serif; }
+    .merriweather  { font-family: 'Merriweather', serif; }
+
+    @media (max-width: 640px) {
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .sample .big {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>字体对比</h1>
+    <p class="intro">
+      每一块显示的文本就是该字体的名称。第一行是 40px 的展示效果，第二行是 16px 的正文效果（Sonic-AMG 的正文就是 16px 纯黑）。
+      两行都使用纯黑 #000，方便对比字形本身。看完后告诉我选哪一种即可。
+    </p>
+
+    <div class="group-title">当前页面正在使用</div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Noto Sans</strong>
+        MOMO 当前正文
+        <span class="tag">MOMO body</span>
+      </div>
+      <div class="sample">
+        <div class="big noto-sans">Noto Sans</div>
+        <div class="small noto-sans">Noto Sans</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Google Sans</strong>
+        MOMO 当前标题、作者栏
+        <span class="tag">MOMO headings</span>
+      </div>
+      <div class="sample">
+        <div class="big google-sans">Google Sans</div>
+        <div class="small google-sans">Google Sans</div>
+      </div>
+    </div>
+
+    <div class="group-title">无衬线体（Sans-serif）</div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Inter</strong>
+        现代、紧凑，技术类学术主页很常用
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big inter">Inter</div>
+        <div class="small inter">Inter</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Source Sans 3</strong>
+        人文风格，比 Noto Sans 更窄、更清爽
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big source-sans">Source Sans 3</div>
+        <div class="small source-sans">Source Sans 3</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Roboto</strong>
+        Google / Android 风格，字形端正
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big roboto">Roboto</div>
+        <div class="small roboto">Roboto</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Open Sans</strong>
+        亲和、易读，网页正文常见
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big open-sans">Open Sans</div>
+        <div class="small open-sans">Open Sans</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Lato</strong>
+        偏暖、圆润，学术主页常用
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big lato">Lato</div>
+        <div class="small lato">Lato</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Carlito</strong>
+        与你的个人主页正文一致
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big carlito">Carlito</div>
+        <div class="small carlito">Carlito</div>
+      </div>
+    </div>
+
+    <div class="group-title">衬线体（Serif）</div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Lora</strong>
+        柔和的衬线体，接近论文阅读感
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big lora">Lora</div>
+        <div class="small lora">Lora</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="meta">
+        <strong>Merriweather</strong>
+        阅读感强，适合大段正文
+        <span class="tag">候选</span>
+      </div>
+      <div class="sample">
+        <div class="big merriweather">Merriweather</div>
+        <div class="small merriweather">Merriweather</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

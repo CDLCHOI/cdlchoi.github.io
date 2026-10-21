@@ -1,5 +1,32 @@
+/* ==========================================================================
+   Page width
+   Bulma's default for .container.is-max-desktop is 960px.
+   Change --page-width below to make the whole MOMO page wider or narrower.
+   ========================================================================== */
+
+:root {
+  --page-width: 1120px;
+}
+
+.container.is-max-desktop {
+  max-width: var(--page-width);
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: #000;
+}
+
+/* Inter + pure black for all body copy and headings */
+.title,
+.subtitle,
+.content,
+.publication-venue {
+  color: #000;
 }
 
 
@@ -24,7 +51,7 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 
@@ -48,15 +75,15 @@ body {
 }
 
 .publication-title {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .publication-venue {
-    color: #555;
+    color: #000;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
