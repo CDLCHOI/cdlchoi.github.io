@@ -13,6 +13,104 @@
 }
 
 /* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+.momo-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #efedf1;
+}
+
+.momo-nav-inner {
+  max-width: var(--page-width);
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.momo-nav-brand {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #000;
+  white-space: nowrap;
+}
+
+.momo-nav-brand:hover {
+  text-decoration: none;
+}
+
+.momo-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.momo-nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+.momo-nav ul a {
+  position: relative;
+  display: inline-block;
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  color: #1f2328;
+  white-space: nowrap;
+}
+
+.momo-nav ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.momo-nav ul a:hover {
+  text-decoration: none;
+}
+
+.momo-nav ul a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Hero background
+   ========================================================================== */
+
+.momo-hero {
+  background:
+    radial-gradient(55% 65% at 50% 20%, rgba(255, 255, 255, 0.7), transparent 70%),
+    linear-gradient(115deg, #f1e7fb 0%, #e8f5fc 45%, #fbf2da 100%);
+}
+
+/* ==========================================================================
    Typography
    ========================================================================== */
 
@@ -56,6 +154,19 @@ body {
 
 
 .publication-title {
+  color: #000;
+}
+
+/* Gradient lettering for the paper title. The @supports guard keeps the text
+   visible in browsers that cannot clip a background to text. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .publication-title {
+    background-image: linear-gradient(90deg, #7b4fb3 0%, #2d8fbd 52%, #a68c1e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .publication-banner {
@@ -199,4 +310,31 @@ body {
 .institution-logos img {
   height: 64px;
   width: auto;
+}
+
+/* Navigation on phones */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 56px;
+  }
+  .momo-nav-inner {
+    height: 56px;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  .momo-nav-brand {
+    font-size: 1rem;
+  }
+  .momo-nav ul {
+    gap: 1rem;
+  }
+  .momo-nav ul a {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
