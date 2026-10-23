@@ -153,6 +153,17 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.visitor-map {
+  width: min(420px, calc(100% - 3rem));
+  margin: 2rem auto;
+}
+
+.visitor-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Citation panel. */
 .bibtex-panel {
   padding: 1.5rem 2rem;
