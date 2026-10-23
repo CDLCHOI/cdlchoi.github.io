@@ -1,5 +1,55 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
+// Media play events do not bubble, so capture them to coordinate every video.
+document.addEventListener('play', function(event) {
+  if (!(event.target instanceof HTMLVideoElement)) {
+    return;
+  }
+
+  document.querySelectorAll('video').forEach(function(video) {
+    if (video !== event.target && !video.paused) {
+      video.pause();
+    }
+  });
+}, true);
+
+document.addEventListener('click', async function(event) {
+  var button = event.target.closest('[data-copy-bibtex]');
+  if (!button) {
+    return;
+  }
+
+  var text = document.getElementById('bibtex-code').textContent;
+  var copied = false;
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch (error) {
+      // Fall back to a user-initiated copy for file previews or denied access.
+    }
+  }
+  if (!copied) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.readOnly = true;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    try {
+      textarea.select();
+      copied = document.execCommand('copy');
+    } finally {
+      textarea.remove();
+      button.focus({ preventScroll: true });
+    }
+  }
+  button.textContent = copied ? 'Copied!' : 'Copy failed';
+  window.setTimeout(function() {
+    button.textContent = 'Copy BibTeX';
+  }, 2000);
+});
+
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;
 

@@ -18,14 +18,14 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index.css?v=f9c4333f">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script src="./static/js/index.js?v=cb906316"></script>
 </head>
 <body>
 
@@ -35,6 +35,7 @@
     <a class="momo-nav-brand" href="#top">MOMO</a>
     <ul>
       <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#dataset">Dataset</a></li>
       <li><a href="#method">Method</a></li>
       <li><a href="#experiments">Experiments</a></li>
       <li><a href="#demos">Demos</a></li>
@@ -141,6 +142,8 @@
         </div>
       </div>
     </div>
+
+
   </div>
 </section>
 
@@ -163,12 +166,124 @@
 </section>
 
 
+<!-- Dataset -->
+<section class="section" id="dataset">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>DySAM (Dynamic Spatial Audio and Motion)</strong> pairs synchronized binaural audio, 3D human motions, and moving sound source trajectories. It contains 2,336 ten-second sequences (about 6.5 hours), covering 42 sound types and 109 audio sources recorded with eight actors, with both sensitive and insensitive reactions.
+          </p>
+          <p>
+            <strong>DySAL (Dynamic Spatial Audio Localization)</strong> provides about 3.3 hours of binaural audio paired with frame-wise sound source positions and listener head poses. Collected with the same setup, it supports dynamic sound source localization across diverse acoustic events.
+          </p>
+        </div>
+        <div class="publication-image">
+          <img src="./static/images/mocap_setup.png?v=11a7b1e1"
+               alt="Data collection setup showing the speaker, Vicon motion capture environment, and capture interface."
+               style="width: 80%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Data collection setup.</strong> A moving omnidirectional speaker, a Vicon motion capture system, and timecode-synchronized binaural recording capture human reactions to moving sounds.
+          </p>
+          <p id="data-processing">
+            <strong>Data Processing.</strong> We use Vicon to capture <span class="marker-human">human motion markers (green points)</span> and <span class="marker-speaker">speaker markers (orange points)</span> in C3D format. <a href="https://github.com/nghorbani/moshpp" target="_blank" rel="noopener noreferrer">MoSh++</a> fits SMPL-X body parameters to the human markers, while singular value decomposition (SVD) and Kalman filtering recover the speaker's center trajectory, visualized as the <span class="marker-location">speaker trajectory (blue sphere)</span>. We then align each sequence with the ground plane and canonicalize it by translating the body's initial horizontal center to the world origin and rotating its initial forward direction to face the +z axis.
+          </p>
+          <p>
+            In the examples below, the left panel shows the raw data and the right panel shows the canonicalized result. We also explicitly visualize the axes of the head coordinate system.
+          </p>
+        </div>
+        <div class="data-processing-videos has-text-left" aria-label="Data processing examples">
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">C3D Example 1: Dog barking</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Data processing example 1">
+              <source src="./static/videos/c3d_bark.mp4?v=49d810d6" type="video/mp4">
+            </video>
+          </article>
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">C3D Example 2: Insect Bees</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Data processing example 2">
+              <source src="./static/videos/c3d_insect_bees.mp4" type="video/mp4">
+            </video>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="sound-video-grid" aria-label="DySAM examples by sound category">
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Cat meowing</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Cat meowing motion example">
+          <source src="./static/videos/gt_video_bar_2/20260427_cat_07_curve_right_walk_collision_sensitive.mp4?v=02e2e0ec" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Dog barking</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Dog barking motion example">
+          <source src="./static/videos/gt_video_bar_2/20260410_bark_03_straight_left_collision_insensitive.mp4?v=23ab9605" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Insect Flying</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Insect Flying motion example">
+          <source src="./static/videos/gt_video_bar_2/20260324_insect_flying_01_straight_right_no_collision_sensitive.mp4?v=c41588d7" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Guitar playing</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Guitar playing motion example">
+          <source src="./static/videos/gt_video_bar_2/20260422_guitar_c_04_curve_right_stand_no_collision_sensitive.mp4?v=9cad94fe" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Car horn</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Car horn motion example">
+          <source src="./static/videos/gt_video_bar_2/20260422_horn_car_01_straight_right_stand_no_collision_sensitive.mp4?v=55a0f411" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Helicopter</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Helicopter motion example">
+          <source src="./static/videos/gt_video_bar_2/20260427_helicopter_c_01_curve_left_stand_no_collision_sensitive.mp4?v=0faa2838" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Machine Gun</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Machine Gun motion example">
+          <source src="./static/videos/gt_video_bar_2/20260324_gun_machine_01_curve_down_no_collision_insensitive.mp4?v=30c55dc9" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Rainstorm</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Rainstorm motion example">
+          <source src="./static/videos/gt_video_bar_2/20260427_rainstorm_03_curve_up_walk_collision_sensitive.mp4?v=2dcb8b59" type="video/mp4">
+        </video>
+      </article>
+      <article class="sound-video-card">
+        <h3 class="sound-video-title">Fireworks</h3>
+        <video controls loop playsinline preload="metadata" aria-label="Fireworks motion example">
+          <source src="./static/videos/gt_video_bar_2/20260422_firework_02_straight_left_walk_no_collision_sensitive.mp4?v=8a1974b4" type="video/mp4">
+        </video>
+      </article>
+    </div>
+  </div>
+</section>
+
+
 <!-- Framework -->
 <section class="section" id="method" style="background-color: #f5f5f5;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            In the real world, human reactions to dynamic sound sources depend on both how the source moves and what the sound conveys. Guided by these two factors, we design the MOMO framework around three complementary components: <strong>Sound Localization</strong>, <strong>Audio Understanding</strong>, and <strong>Motion Generation</strong>.
+          </p>
+        </div>
         <div class="publication-image">
           <img src="./static/images/framework.png"
                alt="Framework architecture."
@@ -224,18 +339,48 @@
         </div>
 
 
-        <div style="height: 1.5rem;"></div>
-        <div class="columns is-centered">
-          <div class="column">
-            <video controls muted loop playsinline preload="metadata" height="100%">
-              <source src="./static/videos/baseline_compare_videos.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
         <div class="content has-text-justified">
           <p>We provide six comparison videos for these methods. Please click to play the video and turn on the sound.
           </p>
+        </div>
+
+        <div class="comparison-videos" aria-label="Method comparison videos by sound category">
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">Machine gun firing</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Machine gun firing comparison">
+              <source src="./static/videos/baseline_compare_videos/20260324_gun_machine_01_curve_down_no_collision_insensitive.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">Guitar playing</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Guitar playing comparison">
+              <source src="./static/videos/baseline_compare_videos/20260422_guitar_c_04_curve_right_stand_no_collision_sensitive.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">Cat meowing</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Cat meowing comparison">
+              <source src="./static/videos/baseline_compare_videos/20260427_cat_07_curve_right_walk_collision_sensitive.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">Rainstorm</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Rainstorm comparison">
+              <source src="./static/videos/baseline_compare_videos/20260427_rainstorm_03_curve_up_walk_collision_sensitive.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">Car passing</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Car passing comparison">
+              <source src="./static/videos/baseline_compare_videos/20260517_car_slow_c_04_curve_left_stand_no_collision_sensitive.mp4" type="video/mp4">
+            </video>
+          </article>
+          <article class="sound-video-card">
+            <h3 class="sound-video-title">Sneezing</h3>
+            <video controls loop playsinline preload="metadata" aria-label="Sneezing comparison">
+              <source src="./static/videos/baseline_compare_videos/20260517_sneezing_03_curve_right_walk_collision_insensitive.mp4" type="video/mp4">
+            </video>
+          </article>
         </div>
 
       </div>
@@ -250,31 +395,39 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Different Reaction Genres</h2>
+        <h2 class="title is-3">
+          Different Reaction Genres
+          <span style="white-space: nowrap;">(insensitive <img src="./static/images/insensitive.png" alt="Neutral expression" style="height: 1em; width: auto; vertical-align: -0.12em;"></span>
+          vs
+          <span style="white-space: nowrap;">sensitive <img src="./static/images/sensitive.png" alt="Startled expression" style="height: 1em; width: auto; vertical-align: -0.12em;">)</span>
+        </h2>
       </div>
     </div>
 
     <!-- 一行一个视频。想加更多就整块复制，改文件名即可。 -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/genre_alarm.mp4" type="video/mp4">
+        <h3 class="sound-video-title">Alarm ringing</h3>
+        <video autoplay controls loop playsinline style="display: block; width: 100%; height: auto;">
+          <source src="./static/videos/genre_concat_without_audio_name/genre_alarm.mp4" type="video/mp4">
         </video>
       </div>
     </div>
 
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/genre_insect_bees.mp4" type="video/mp4">
+        <h3 class="sound-video-title">Bees buzzing</h3>
+        <video autoplay controls loop playsinline style="display: block; width: 100%; height: auto;">
+          <source src="./static/videos/genre_concat_without_audio_name/genre_insect_bees_nowor.mp4" type="video/mp4">
         </video>
       </div>
     </div>
 
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <video autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/genre_train.mp4" type="video/mp4">
+        <h3 class="sound-video-title">Train passing</h3>
+        <video autoplay controls loop playsinline style="display: block; width: 100%; height: auto;">
+          <source src="./static/videos/genre_concat_without_audio_name/genre_train.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -294,7 +447,7 @@
     <!-- 依次两个视频 -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <video autoplay controls muted loop playsinline height="100%">
+        <video autoplay controls loop playsinline height="100%">
           <source src="./static/videos/robot_sim_video.mp4" type="video/mp4">
         </video>
       </div>
@@ -302,7 +455,7 @@
 
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <video controls muted loop playsinline preload="metadata" height="100%">
+        <video controls loop playsinline preload="metadata" height="100%">
           <source src="./static/videos/robot_demonstration.mp4" type="video/mp4">
         </video>
       </div>
@@ -310,6 +463,27 @@
   </div>
 </section>
 
+
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="bibtex-panel">
+          <div class="bibtex-header">
+            <h2 class="title is-3">BibTeX</h2>
+            <button class="bibtex-copy" type="button" data-copy-bibtex aria-live="polite">Copy BibTeX</button>
+          </div>
+          <pre><code id="bibtex-code">@article{cai2026momo,
+  title={{MOMO}: Human Motion from Moving Sounds},
+  author={Cai, Deli and Xu, Shuyang and Dou, Zhiyang and Lan, Zitong and Zhao, Mingmin and Ding, Changxing and Komura, Taku},
+  journal={arXiv preprint arXiv:2610.24522},
+  year={2026}
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">

@@ -1,0 +1,206 @@
+{
+  "20260427_cat_07_curve_right_walk_collision_sensitive.mp4": {
+    "filename": "20260427_cat_07_curve_right_walk_collision_sensitive.mp4",
+    "category": "Cat meowing",
+    "source_sha256": "921811104b5e75902b0ebae110fcad96f0a2e0b8411317acce5e634d58c02f0d",
+    "output_sha256": "02e2e0ec5ee5b78f79ac5f9f8f014634f714b6fec4493b8bee6397214baa0019",
+    "decoded_audio_sha256": "e98cbd425663a8ec6d74a562290718cd6ee777035a8b2faff47f4bfbd31ee361",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260410_bark_03_straight_left_collision_insensitive.mp4": {
+    "filename": "20260410_bark_03_straight_left_collision_insensitive.mp4",
+    "category": "Dog barking",
+    "source_sha256": "1985eec1cfc855f08a72bd0c45768b1c97aff3de0b5f051f36a406a4e1518d6e",
+    "output_sha256": "23ab96051d2e7aa15af1162f38612290783bdc4a4e0f94eca7471cfbb1f09f49",
+    "decoded_audio_sha256": "a4cf26cf713ddf41ea77de1ccc83b883aa6f7f4b05046b099f9be80af55f7e88",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260324_insect_flying_01_straight_right_no_collision_sensitive.mp4": {
+    "filename": "20260324_insect_flying_01_straight_right_no_collision_sensitive.mp4",
+    "category": "Insect buzzing",
+    "source_sha256": "b0130f721189afc2c91c047a6c6cd5dbe8fee24cb1841a7fa894a1f058a7d232",
+    "output_sha256": "c41588d7de56d82d70ae8051af7e3212d9443932107d649648a556d26c60e4d7",
+    "decoded_audio_sha256": "f257c96e443e82f473079e1c246abe904337dee6df3a054fab5d7471ee86fdf7",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260422_guitar_c_04_curve_right_stand_no_collision_sensitive.mp4": {
+    "filename": "20260422_guitar_c_04_curve_right_stand_no_collision_sensitive.mp4",
+    "output_filename": "20260422_guitar_c_04_curve_right_stand_no_collision_sensitive.mp4",
+    "category": "Guitar playing",
+    "source_sha256": "3838c67c19d592f73e9dac61e86182e7f8adb6c700a9a4731c1a77253ae14825",
+    "output_sha256": "9cad94fef44da50d45f09a3a65bd841abb6a3c0ce3af66ff983ff7c32cbd2295",
+    "decoded_audio_sha256": "ad454e95fed0cbbbd55119094e004f10a4bd4ec2de0406895daffc93252e9448",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260422_horn_car_01_straight_right_stand_no_collision_sensitive.mp4": {
+    "filename": "20260422_horn_car_01_straight_right_stand_no_collision_sensitive.mp4",
+    "output_filename": "20260422_horn_car_01_straight_right_stand_no_collision_sensitive.mp4",
+    "category": "Car horn",
+    "source_sha256": "7bb7e218fef7cb3b8de0aae5a9b7e2d392fe1b33330d64bf77d187637c539a66",
+    "output_sha256": "55a0f411c849fcdebd504c5f48697d3a2193a0dbb1b712ca186fcdf72136ae55",
+    "decoded_audio_sha256": "21e2a4d3cb1c722760947958c2b8aa680d3e4a4236a9b0b31ca6490faca62ec3",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260427_helicopter_c_01_curve_left_stand_no_collision_sensitive.mp4": {
+    "filename": "20260427_helicopter_c_01_curve_left_stand_no_collision_sensitive.mp4",
+    "output_filename": "20260427_helicopter_c_01_curve_left_stand_no_collision_sensitive.mp4",
+    "category": "Helicopter",
+    "source_sha256": "f38409e579e716c777d092b20c1e3366084a49b0ff2bcc67526d79ebc23f9626",
+    "output_sha256": "0faa2838d42f9463dac59f1183c22f44569b07f9ec26ef0c823ec4026658da16",
+    "decoded_audio_sha256": "35d6e7b02662ad39a8be479c017d560ad893fa588c4c72c6eace04731c48143f",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260324_gun_machine_01_curve_down_no_collision_insensitive.mp4": {
+    "filename": "20260324_gun_machine_01_curve_down_no_collision_insensitive.mp4",
+    "output_filename": "20260324_gun_machine_01_curve_down_no_collision_insensitive.mp4",
+    "category": "Machine gun fire",
+    "source_sha256": "a4c30c2c7c242d868893a58ce53e5e54c0326b57a974a2570f7fc15a0c021b8e",
+    "output_sha256": "30c55dc98c6c27766f3fea2aa9610ec9d4f0a1184ba9568c8d6acfd207a92e63",
+    "decoded_audio_sha256": "c9fcae16deb33869bbab94491d309b5fdb95565d4cf9060eef6d45742330ade2",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260427_rainstorm_03_curve_up_walk_collision_sensitive.mp4": {
+    "filename": "20260427_rainstorm_03_curve_up_walk_collision_sensitive.mp4",
+    "output_filename": "20260427_rainstorm_03_curve_up_walk_collision_sensitive.mp4",
+    "category": "Rainstorm",
+    "source_sha256": "8dcc0fdf7075afcb0000c3dc2f76a34094c9bf205c923bdc123f84dd1aa92eb9",
+    "output_sha256": "2dcb8b59089d4f5fba2b3bbbfd9cb1995fe024e108f0edbd97974793a15ff961",
+    "decoded_audio_sha256": "856cd67b5c135f718184f959db281313baa793303a01940d70ce21e04e7556b8",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  },
+  "20260422_firework_02_straight_left_walk_no_collision_sensitive.mp4": {
+    "filename": "20260422_firework_02_straight_left_walk_no_collision_sensitive.mp4",
+    "output_filename": "20260422_firework_02_straight_left_walk_no_collision_sensitive.mp4",
+    "category": "Fireworks",
+    "source_sha256": "c0d4e50e83774e59ef1e6106d7c13c21689d65b628c099f52f16b417f70b4e19",
+    "output_sha256": "8a1974b4900c7da9f75c24135537443cd108f3570f9283662d97613c2d4b6d6f",
+    "decoded_audio_sha256": "8669c82550d950d46426d278008524b77f09a236fb1c0b827876bd4ce43d713e",
+    "frames": 300,
+    "fps": 30.0,
+    "source_size": [
+      1280,
+      1024
+    ],
+    "output_size": [
+      1280,
+      1248
+    ],
+    "title_font_px": 41,
+    "time_font_px": 41,
+    "palette": "sunflower",
+    "source_unchanged": true,
+    "decoded_audio_identical": true
+  }
+}
