@@ -164,6 +164,14 @@ body {
   height: auto;
 }
 
+.visitor-map-title {
+  margin: 0 0 0.75rem;
+  color: #363636;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 .supercounters-widgets {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
