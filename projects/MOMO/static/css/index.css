@@ -172,15 +172,16 @@ body {
   text-align: center;
 }
 
-.supercounters-widgets {
+.visitor-stats-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 640px) minmax(0, 300px);
   align-items: start;
   gap: 2rem;
-  width: min(900px, calc(100% - 3rem));
+  width: min(972px, calc(100% - 3rem));
   margin: 2rem auto;
 }
 
+.visitor-stats-map,
 .supercounters-widget {
   min-width: 0;
   text-align: center;
@@ -191,9 +192,10 @@ body {
   max-width: 100%;
 }
 
-@media (max-width: 640px) {
-  .supercounters-widgets {
+@media (max-width: 900px) {
+  .visitor-stats-row {
     grid-template-columns: minmax(0, 1fr);
+    width: min(640px, calc(100% - 3rem));
   }
 }
 
