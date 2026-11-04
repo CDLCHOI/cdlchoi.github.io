@@ -192,6 +192,10 @@ body {
   max-width: 100%;
 }
 
+.supercounters-widget [title="Flag Counter"] {
+  zoom: 1.4;
+}
+
 @media (max-width: 900px) {
   .visitor-stats-row {
     grid-template-columns: minmax(0, 1fr);
